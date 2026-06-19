@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import Footer from '../components/Footer';
+import { FooterHome } from '../components/Footer';
 import useRevealOnScroll from '../hooks/useRevealOnScroll';
 
 const TABS = ['terms', 'privacy', 'shipping', 'refund'];
@@ -195,7 +195,7 @@ export default function Legal() {
         </div>
       </div>
 
-      <Footer />
+      <FooterHome />
     </div>
   );
 }

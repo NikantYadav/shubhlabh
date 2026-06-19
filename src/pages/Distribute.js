@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
-import Footer from '../components/Footer';
+import { FooterHome } from '../components/Footer';
 import useRevealOnScroll from '../hooks/useRevealOnScroll';
 
 const Chk = () => (
@@ -272,7 +272,7 @@ export default function Distribute() {
         </div>
       </section>
 
-      <Footer />
+      <FooterHome />
     </div>
   );
 }

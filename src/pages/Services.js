@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Footer from '../components/Footer';
+import { FooterHome } from '../components/Footer';
 import useRevealOnScroll from '../hooks/useRevealOnScroll';
 import CfIllustration from '../components/services/CfIllustration';
 import WarehousingIllustration from '../components/services/WarehousingIllustration';
@@ -213,7 +213,7 @@ export default function Services() {
       {/* ═══ CTA ═══ */}
       <div className="cband"><div className="cband-in"><h2 className="r">Ready to scale across Gurgaon?</h2><p className="r d1">Share your requirements — we respond within one business day.</p><div className="cband-btns r d2"><a onClick={() => nav('distribute')} className="btn btn-t">Hire Us for Your Distribution</a><a onClick={() => nav('faq')} className="btn btn-g">Read FAQs First</a></div></div></div>
 
-      <Footer />
+      <FooterHome />
     </div>
   );
 }

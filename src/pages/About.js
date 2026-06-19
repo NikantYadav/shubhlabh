@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Footer from '../components/Footer';
+import { FooterHome } from '../components/Footer';
 import useRevealOnScroll from '../hooks/useRevealOnScroll';
 
 export default function About() {
@@ -73,7 +73,7 @@ export default function About() {
           <div className="cband-btns r d3"><a onClick={() => nav('distribute')} className="btn btn-t">Hire Us for Your Distribution</a><a onClick={() => nav('services')} className="btn btn-g">View Our Services</a></div>
         </div>
       </div>
-      <Footer />
+      <FooterHome />
     </div>
   );
 }

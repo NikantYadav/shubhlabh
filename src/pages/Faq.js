@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Footer from '../components/Footer';
+import { FooterHome } from '../components/Footer';
 import useRevealOnScroll from '../hooks/useRevealOnScroll';
 
 const PlusIcon = () => (
@@ -141,7 +141,7 @@ export default function Faq() {
         </div>
       </div>
 
-      <Footer />
+      <FooterHome />
     </div>
   );
 }

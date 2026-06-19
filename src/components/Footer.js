@@ -3,43 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import logo from '../assets/logo.png';
 import { PAGE_TO_PATH } from './Header';
 
-/*
-  NOTE: the original site has TWO distinct footer markups:
-  - Home page ("page-index") uses the rich `.ft2-*` 4-column footer (FooterHome below)
-  - All other 6 pages use a simpler `.ft-*` footer (FooterSimple below, the default export)
-  They were verified byte-identical across about/services/coverage/faq/distribute/legal.
-*/
-
 function navTo(navigate, page, anchor) {
   navigate(PAGE_TO_PATH[page] || '/', anchor ? { state: { anchor } } : undefined);
-}
-
-export default function Footer() {
-  const navigate = useNavigate();
-  const nav = (page, anchor) => navTo(navigate, page, anchor);
-
-  return (
-    <footer className="ft">
-      <div className="ft-in">
-        <div className="ft-top">
-          <div className="ft-brand">
-            <div className="ft-logo"><div className="logo-pill" style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}><img src={logo} alt="SE" width="28" height="28" style={{ objectFit: 'contain' }} /><div className="logo-txt"><b className="lname">Shubhlabh Express</b><span className="ltag">Prosperity in Motion</span></div></div></div>
-            <p className="ft-desc" style={{ color: '#fff' }}>Gurgaon's dedicated B2B distribution &amp; C&amp;F partner — connecting manufacturers with 2,000+ retail touchpoints across Gurgaon NCR. A new age company founded in 2026.</p>
-            <div className="ft-contact"><a href="mailto:contact@shublabh.ltd">contact@shublabh.ltd</a><a href="https://shublabh.ltd">shublabh.ltd</a><span>Gurgaon, Haryana 122001</span><span style={{ display: 'flex', alignItems: 'flex-start', gap: 6, marginTop: 4 }}><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: 2, opacity: .7 }}><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>Plot No 780, Wazirabad, Main Market, Sector 52, Gurugram 122003</span></div>
-          </div>
-          <div className="ft-cols">
-            <div className="ft-col"><div className="ft-ct">Company</div><a onClick={() => nav('about')}>About Us</a><a onClick={() => nav('services')}>Services</a><a onClick={() => nav('coverage')}>Coverage</a><a onClick={() => nav('faq')}>FAQ</a><a onClick={() => nav('distribute')}>Hire Us</a></div>
-            <div className="ft-col"><div className="ft-ct">Legal</div><a onClick={() => nav('legal', 'terms')}>Terms &amp; Conditions</a><a onClick={() => nav('legal', 'privacy')}>Privacy Policy</a><a onClick={() => nav('legal', 'shipping')}>Shipping Policy</a><a onClick={() => nav('legal', 'refund')}>Refund Policy</a></div>
-            <div className="ft-col"><div className="ft-ct">Contact</div><a href="mailto:contact@shublabh.ltd">contact@shublabh.ltd</a><a href="https://wa.me/919999988888">+91 99999 88888</a><a href="https://shublabh.ltd">shublabh.ltd</a></div>
-          </div>
-        </div>
-        <div className="ft-bot">
-          <span>&copy; 2026 Shubhlabh Express Pvt. Ltd. All rights reserved.</span>
-          <div className="ft-legal"><a onClick={() => nav('legal', 'terms')}>Terms</a><a onClick={() => nav('legal', 'privacy')}>Privacy</a><a onClick={() => nav('legal', 'shipping')}>Shipping</a><a onClick={() => nav('legal', 'refund')}>Refunds</a></div>
-        </div>
-      </div>
-    </footer>
-  );
 }
 
 export function FooterHome() {

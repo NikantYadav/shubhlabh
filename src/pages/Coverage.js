@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Footer from '../components/Footer';
+import { FooterHome } from '../components/Footer';
 import { useMapModal } from '../components/MapModal';
 import useRevealOnScroll from '../hooks/useRevealOnScroll';
 
@@ -164,7 +164,7 @@ export default function Coverage() {
         </div>
       </div>
 
-      <Footer />
+      <FooterHome />
     </div>
   );
 }
