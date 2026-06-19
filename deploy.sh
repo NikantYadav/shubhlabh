@@ -34,6 +34,6 @@ docker build \
 
 echo "Restarting container..."
 docker rm -f "$CONTAINER_NAME" >/dev/null 2>&1 || true
-docker run -d --name "$CONTAINER_NAME" -p 80:80 --restart unless-stopped "$IMAGE_NAME:latest"
+docker run -d --name "$CONTAINER_NAME" -p 127.0.0.1:8080:80 --restart unless-stopped "$IMAGE_NAME:latest"
 
 echo "Deploy complete."

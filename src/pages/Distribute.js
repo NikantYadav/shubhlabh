@@ -21,10 +21,13 @@ export default function Distribute() {
   const [sent, setSent] = useState(false);
   const [sendError, setSendError] = useState('');
   const errRef = useRef(null);
+  const submittingRef = useRef(false);
 
   const set = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
 
   const doSubmit = () => {
+    if (submittingRef.current) return;
+
     var name = form.name.trim();
     var company = form.company.trim();
     var phone = form.phone.trim();
@@ -49,6 +52,7 @@ export default function Distribute() {
     }
     setShowErrors(false);
     setSendError('');
+    submittingRef.current = true;
     setSubmitting(true);
 
     emailjs
@@ -68,6 +72,7 @@ export default function Distribute() {
         { publicKey: process.env.REACT_APP_EMAILJS_PUBLIC_KEY }
       )
       .then(function () {
+        submittingRef.current = false;
         setSubmitting(false);
         setSent(true);
         setTimeout(function () {
@@ -75,6 +80,7 @@ export default function Distribute() {
         }, 5000);
       })
       .catch(function (err) {
+        submittingRef.current = false;
         setSubmitting(false);
         setSendError('Something went wrong sending your enquiry. Please try again or email us directly.');
         console.error('EmailJS error:', err);
