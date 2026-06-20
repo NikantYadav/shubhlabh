@@ -18,8 +18,7 @@
     "start": "node scripts/patch-react-router.js && react-scripts start",
     "build": "node scripts/patch-react-router.js && react-scripts build && node scripts/defer-css.js",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "postinstall": "node scripts/patch-react-router.js"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
