@@ -17,7 +17,7 @@ export default function Legal() {
     if (anchor && TABS.includes(anchor)) setActive(anchor);
   }, [location.state]);
 
-  const lgNav = (id) => setActive(id);
+  const lgNav = (id) => { setActive(id); window.scrollTo(0, 0); };
   const secCls = (id) => `lg2-sec${active === id ? ' on' : ''}`;
   const tabCls = (id) => `lg2-tab${active === id ? ' on' : ''}`;
   const snCls = (id) => `lg2-sn${active === id ? ' on' : ''}`;
